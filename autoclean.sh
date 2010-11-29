@@ -12,6 +12,12 @@ else
 	echo "autoclean.sh -v pour mode verbose"
 fi
 
+if [ -e "Makefile" ]
+then
+	echo "make distclean"
+	make distclean
+fi
+
 files_to_rm+="	aclocal.m4"
 dir_to_rm+="	autom4te.cache"
 files_to_rm+="	config.guess"
