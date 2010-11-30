@@ -18,6 +18,11 @@ then
 	make distclean
 fi
 
+if [ -e "samples/Makefile" ]
+then
+	(cd samples && make distclean)
+fi
+
 files_to_rm+="	aclocal.m4"
 dir_to_rm+="	autom4te.cache"
 files_to_rm+="	config.guess"
@@ -40,11 +45,22 @@ files_to_rm+="	libtool"
 files_to_rm+="	stamp-h1"
 files_to_rm+="	depcomp"
 
-#info
+#src
 files_to_rm+="		src/GefConsole/Makefile"
 files_to_rm+="		src/GefConsole/Makefile.in"
 files_to_rm+="		src/GefConsole/*.o"
 
+#samples
+files_to_rm+="	samples/Makefile.in"
+files_to_rm+="	samples/Makefile"
+
+#samples/OpenGL
+files_to_rm+="	samples/OpenGL/OpenGL"
+files_to_rm+="	samples/OpenGL/OpenGL"
+dir_to_rm+="	samples/OpenGL/.deps"
+files_to_rm+="	samples/OpenGL/Makefile"
+files_to_rm+="	samples/OpenGL/Makefile.in"
+files_to_rm+="	samples/OpenGL/*.o"
 
 echo "AUTOCLEAN :"
 

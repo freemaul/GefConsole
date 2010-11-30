@@ -15,6 +15,8 @@ AM_INIT_AUTOMAKE
 AC_PROG_CC
 AC_PROG_LIBTOOL
 
+AM_PROG_CC_C_O
+
 # Checks for libraries.
 
 # Checks for header files.
@@ -28,6 +30,8 @@ AC_PROG_LIBTOOL
 
 AC_CONFIG_FILES([Makefile
 src/GefConsole/Makefile
+samples/Makefile
+samples/OpenGL/Makefile
 ])
 
 AC_OUTPUT
